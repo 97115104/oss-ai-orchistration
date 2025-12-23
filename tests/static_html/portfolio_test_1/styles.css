@@ -1,0 +1,98 @@
+/* ----------  Light / Dark theme variables ---------- */
+:root {
+  /* Light theme (default) */
+  --bg: #ffffff;
+  --text: #000000;
+  --accent: #0066cc;
+  --nav-bg: #e0e0e0;
+  --nav-text: #000000;
+  --nav-hover: #c0c0c0;
+  --blockquote-bg: #f0f0f0;
+  --blockquote-border: #0066cc;
+  --toggle-bg: #cccccc;
+  --toggle-knob: #ffffff;
+}
+
+body.dark {
+  /* Dark theme overrides */
+  --bg: #000000;
+  --text: #ffffff;
+  --accent: #4a90e2;
+  --nav-bg: #333333;
+  --nav-text: #ffffff;
+  --nav-hover: #555555;
+  --blockquote-bg: #222222;
+  --blockquote-border: #4a90e2;
+  --toggle-bg: #666666;
+  --toggle-knob: #000000;
+}
+
+/* ----------  Global styles ---------- */
+html, body {
+  margin: 0;
+  height: 100%;
+  font-family: "Courier New", Courier, monospace;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.4;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ----------  Navigation bar ---------- */
+nav {
+  background: var(--nav-bg);
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  margin-right: 1rem;
+  font-weight: 600;
+  color: var(--nav-text);
+}
+nav a:last-child { margin-right: 0; }
+nav a:hover { background: var(--nav-hover); padding: 0.3rem 0.6rem; border-radius: 4px; }
+
+.theme-toggle {
+  background: var(--toggle-bg);
+  border: none;
+  cursor: pointer;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+.theme-toggle:focus { outline: 2px solid var(--accent); }
+
+/* ----------  Page container ---------- */
+.container {
+  max-width: 800px;
+  margin: 1.5rem auto;
+  padding: 1rem 1.5rem;
+  text-align: center;
+}
+
+/* ----------  Parrot logo ---------- */
+.logo {
+  font-size: 6rem;          /* makes the emoji large */
+  color: var(--accent);
+  margin-bottom: 1rem;
+  user-select: none;        /* prevent accidental dragging */
+}
+
+/* ----------  Quote styling ---------- */
+blockquote {
+  margin: 2rem 0 0 0;
+  padding: 1rem;
+  background: var(--blockquote-bg);
+  border-left: 4px solid var(--blockquote-border);
+  font-style: italic;
+}
+
+/* ----------  Accessibility tweaks ---------- */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}

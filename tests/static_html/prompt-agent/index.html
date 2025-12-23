@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>promptimprove3000</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>promptimprove3000</h1>
+
+    <!-- 1. User request -->
+    <textarea id="userInput" placeholder="Enter your simple request…"></textarea>
+
+    <!-- 2. Depth selection -->
+    <div class="depth">
+      <label><input type="radio" name="depth" value="basic" checked> Basic</label>
+      <label><input type="radio" name="depth" value="intermediate"> Intermediate</label>
+      <label><input type="radio" name="depth" value="advanced"> Advanced</label>
+    </div>
+
+    <!-- 3. Action buttons -->
+    <div class="actions">
+      <button id="genPromptBtn">Generate Prompt</button>
+      <button id="genPromptAnsBtn">Generate Prompt & Answer</button>
+    </div>
+
+    <!-- 4. Generated prompt -->
+    <div id="promptSection" class="hidden">
+      <h2>Improved Prompt</h2>
+      <textarea id="generatedPrompt" readonly></textarea>
+      <div class="actions">
+        <button id="copyPromptBtn">Copy Prompt</button>
+      </div>
+    </div>
+
+    <!-- 5. Answer -->
+    <div id="answerSection" class="hidden">
+      <h2>Answer</h2>
+      <textarea id="answer" readonly placeholder="Answer will appear here…"></textarea>
+      <div class="actions">
+        <button id="copyAnswerBtn">Copy Answer</button>
+      </div>
+    </div>
+
+    <!-- 6. Spinner -->
+    <div id="spinner" class="hidden"><div class="loader"></div></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

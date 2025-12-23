@@ -1,0 +1,85 @@
+:root {
+  --bg: #ffffff;
+  --text: #000000;
+  --accent: #007BFF;
+  --nav-bg: #f8f9fa;
+  --nav-hover: #e9ecef;
+}
+
+body.dark {
+  --bg: #121212;
+  --text: #ffffff;
+  --accent: #007BFF;
+  --nav-bg: #1e1e1e;
+  --nav-hover: #2a2a2a;
+}
+
+html, body {
+  height: 100%;
+  font-family: "Courier New", Courier, monospace;
+  background-color: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--nav-bg);
+  padding: 1rem 0;
+}
+
+nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: var(--accent);
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: var(--nav-hover);
+}
+
+.theme-toggle {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background-color: var(--accent);
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.theme-toggle:focus {
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.logo {
+  font-size: 6rem;
+  color: var(--accent);
+  user-select: none;
+}
+
+blockquote {
+  border-left: 4px solid var(--accent);
+  padding: 1rem;
+  background-color: var(--bg);
+  margin: 2rem 0;
+  font-style: italic;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Add any motion-based transitions here if needed */
+}
