@@ -1,7 +1,26 @@
 import lmstudio as lms
+import sys
 
-# convenience API
-model = lms.llm("openai_gpt-oss-20b-coder-neo-code-di-matrix")
-result = model.respond("Do a web search for Austin Harshberger and let me know what you find.")
+def main():
+    if len(sys.argv) < 2:
+        print("Usage: python3 using-model.py <model_name> [query]")
+        return
 
-print(result)
+    model_name = sys.argv[1]
+    query = " ".join(sys.argv[2:]) if len(sys.argv) > 2 else None
+
+    with lms.Client() as client:
+        try:
+            model = client.llm.model(model_name)
+            if query:
+                result = model.respond(query)
+                print(result)
+            else:
+                prompt = input("Enter your prompt: ")
+                result = model.respond(prompt)
+                print(result)
+        except Exception as e:
+            print(f"Error: {e}")
+
+if __name__ == "__main__":
+    main()

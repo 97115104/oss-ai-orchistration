@@ -41,4 +41,4 @@ fi
 
 printf "Installation complete. You can now use the model with UDID: ${UDID}\n"
 printf "To interact with the model, executeing the file using-model.py:\n"
-python3 using-model.py nvidia/nemotron-3-nano "Do a web search for Austin Harshberger and let me know what you find."
+python3 using-model.py ${UDID} "Write a poem"
