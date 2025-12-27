@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-MODEL=openai_gpt-oss-20b-coder-neo-code-di-matrix
+read -p "model to use: " model_input
+
+MODEL=$model_input
 UDID=$(uuidgen)
 
 # Check if lms is installed
