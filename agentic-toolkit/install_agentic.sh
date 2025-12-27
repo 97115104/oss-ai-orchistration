@@ -41,4 +41,7 @@ fi
 
 printf "Installation complete. You can now use the model with UDID: ${UDID}\n"
 printf "To interact with the model, executeing the file using-model.py:\n"
-python3 using-model.py ${UDID} "Write a poem"
+
+read -p "prompt to send: " prompt
+
+python3 using-model.py ${UDID} "${prompt}"
